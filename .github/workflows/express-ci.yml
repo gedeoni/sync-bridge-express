@@ -1,14 +1,27 @@
-name: Node.js CI
+name: sync-bridge-express CI
 
 on:
   push:
     branches: [main, master]
+    paths:
+      - 'sync-bridge-express/**'
   pull_request:
     branches: [main, master]
+    paths:
+      - 'sync-bridge-express/**'
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: sync-bridge-express
+
+    env:
+      NODE_ENV: test
+      DATABASE_URI: 'sqlite::memory:'
+      AUTHORIZATION_KEY: ${{ secrets.AUTHORIZATION_KEY }}
 
     steps:
       - name: Checkout Code
@@ -19,6 +32,7 @@ jobs:
         with:
           node-version: '20.18.1'
           cache: 'npm'
+          cache-dependency-path: sync-bridge-express/package-lock.json
 
       - name: Install Dependencies
         run: npm ci
