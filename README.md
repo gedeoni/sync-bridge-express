@@ -74,6 +74,38 @@ Sync Bridge serves as a decoupling layer between core business databases and ext
       └───────────────┘                       └───────────────┘
 ```
 
+### Data Synchronization Control Flow
+
+The REST synchronization endpoint (`POST /api/v1/sync`) follows a decoupled, highly optimized **Strategy Pattern** to process incoming data batches transactionally:
+
+```mermaid
+graph TD
+    A[Start sync request] --> B[Create SyncHistory record - PENDING_RETRY]
+    B --> C[Initialize database transaction]
+    C --> D[Batch-fetch existing record IDs from DB]
+    D --> E[Loop each item in payload data]
+    E --> F{Does ID exist in database?}
+    F -- Yes (Update) --> G[Perform repository.update]
+    G --> H{Model has registered postSync processor?}
+    F -- No (Create) --> I[Perform repository.create]
+    I --> H
+    H -- Yes --> J[Execute processor.postSync - e.g., upsert order items]
+    H -- No --> K[Continue to next item]
+    J --> K
+    K --> L{More items in batch?}
+    L -- Yes --> E
+    L -- No --> M[Commit transaction]
+    M --> N[Update SyncHistory - SUCCESSFUL]
+    N --> O[Return HTTP 200 Success Response]
+
+    A --> P[Catch Error]
+    P --> Q[Rollback transaction]
+    Q --> R[Update SyncHistory - FAILED with failure_reason]
+    R --> S[Return HTTP 500 Server Error]
+```
+
+This decoupled architecture strictly satisfies the **Open-Closed Principle (OCP)**. If a new model requires complex custom relationship syncing (such as child elements, history logs, or custom side-effects), developers can simply register a new `SyncProcessor` in the registry. The core transaction and synchronization engine remains entirely untouched.
+
 ---
 
 ## Key Features
@@ -489,7 +521,7 @@ Sets a failed log's status back to `pending_retry` to schedule a re-attempt.
 
 ## GraphQL API Specifications
 
-The GraphQL API compiles the entire `schema.graphql` file dynamically through standard decorators. By default, it exposes the **Employee** workspace.
+The GraphQL API compiles the entire `schema.graphql` file dynamically through standard decorators. By default, it exposes the **Employee** and **Customer** workspaces.
 
 ### GraphQL Endpoints & Queries
 
@@ -553,6 +585,36 @@ _Variables:_
     "email": "johndoe@example.com",
     "company": "Sync Bridge Corp",
     "jobTitle": "Lead Architect"
+  }
+}
+```
+
+#### 4. Fetch Customers list (with limit & offset pagination)
+
+```graphql
+query GetCustomers {
+  customers(limit: 5, offset: 0) {
+    id
+    email
+    first_name
+    last_name
+    default_currency
+    full_name
+  }
+}
+```
+
+#### 5. Fetch Customer by ID
+
+```graphql
+query GetCustomer {
+  customer(id: 1) {
+    id
+    email
+    first_name
+    last_name
+    default_currency
+    full_name
   }
 }
 ```

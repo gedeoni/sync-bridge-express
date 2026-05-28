@@ -13,14 +13,21 @@ export const logger = bunyan.createLogger({
   src: true,
   streams,
   serializers: {
-    req: (req) => ({
-      id: req.id,
-      method: req.method,
-      url: req.url,
-      headers: req.headers,
-      remoteAddress: req.connection.remoteAddress,
-      remotePort: req.connection.remotePort,
-    }),
+    req: (req) => {
+      if (!req) return req;
+      const sanitizedHeaders = { ...req.headers };
+      if (sanitizedHeaders['x-auth-token']) sanitizedHeaders['x-auth-token'] = '[REDACTED]';
+      if (sanitizedHeaders['authorization']) sanitizedHeaders['authorization'] = '[REDACTED]';
+
+      return {
+        id: req.id,
+        method: req.method,
+        url: req.url,
+        headers: sanitizedHeaders,
+        remoteAddress: req.connection ? req.connection.remoteAddress : undefined,
+        remotePort: req.connection ? req.connection.remotePort : undefined,
+      };
+    },
     res: bunyan.stdSerializers.res,
     err: bunyan.stdSerializers.err,
   },

@@ -26,11 +26,18 @@ export const connect = (url: string) => {
     dialect: isSqlite ? 'sqlite' : 'postgres',
   };
 
-  if (isSqlite) {
+  if (isSqlite && url !== 'sqlite::memory:' && customEnv.NODE_ENV !== 'test') {
     // Keep the replication architecture active for SQLite by mapping connection storage paths
     options.replication = {
       read: [{ storage: customEnv.SLAVE_ONE || 'replica.sqlite' } as any],
       write: { storage: customEnv.MAIN_HOST || 'main.sqlite' } as any,
+    };
+  } else if (isSqlite) {
+    options.storage = ':memory:';
+    options.pool = {
+      max: 1,
+      min: 1,
+      idle: 900000,
     };
   } else {
     options.schema = customEnv.DB_SCHEMA || 'public';

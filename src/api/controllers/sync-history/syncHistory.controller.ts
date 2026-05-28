@@ -17,7 +17,7 @@ export const getAll = async (req: Request, res: Response) => {
     where,
     limit,
     offset,
-    order: [['createdAt', 'DESC']],
+    order: [['created_at', 'DESC']],
   });
 
   const pages = Math.ceil(count / limit);

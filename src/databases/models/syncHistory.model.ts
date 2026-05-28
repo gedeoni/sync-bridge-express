@@ -1,4 +1,15 @@
-import { Table, Column, Model, DataType, AllowNull, Default, PrimaryKey, AutoIncrement, CreatedAt, UpdatedAt } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  AllowNull,
+  Default,
+  PrimaryKey,
+  AutoIncrement,
+  CreatedAt,
+  UpdatedAt,
+} from 'sequelize-typescript';
 
 export enum SyncStatus {
   SUCCESSFUL = 'successful',
@@ -11,7 +22,7 @@ export enum SyncStatus {
   tableName: 'sync_history',
   timestamps: true,
   createdAt: 'created_at',
-  updatedAt: 'updated_at'
+  updatedAt: 'updated_at',
 })
 export default class SyncHistory extends Model {
   @PrimaryKey

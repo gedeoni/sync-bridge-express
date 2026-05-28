@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1779998364918" clover="3.2.0">
+  <project timestamp="1779998364918" name="All files">
+    <metrics statements="460" coveredstatements="458" conditionals="214" coveredconditionals="188" methods="50" coveredmethods="49" elements="724" coveredelements="695" complexity="0" loc="460" ncloc="460" packages="10" files="27" classes="27"/>
+    <package name="src">
+      <metrics statements="42" coveredstatements="42" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
+      <file name="app.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/app.ts">
+        <metrics statements="38" coveredstatements="38" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="52" count="31" type="stmt"/>
+        <line num="53" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="31" type="cond" truecount="1" falsecount="0"/>
+        <line num="55" count="24" type="stmt"/>
+        <line num="57" count="7" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="62" count="31" type="stmt"/>
+        <line num="63" count="31" type="stmt"/>
+        <line num="64" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="31" type="stmt"/>
+        <line num="67" count="31" type="stmt"/>
+        <line num="70" count="5" type="stmt"/>
+        <line num="72" count="5" type="stmt"/>
+        <line num="74" count="5" type="stmt"/>
+        <line num="75" count="5" type="stmt"/>
+        <line num="77" count="5" type="stmt"/>
+        <line num="79" count="5" type="stmt"/>
+        <line num="81" count="5" type="stmt"/>
+      </file>
+      <file name="swagger.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/swagger.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api.controllers.status">
+      <metrics statements="34" coveredstatements="34" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
+      <file name="status.controller.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/status/status.controller.ts">
+        <metrics statements="29" coveredstatements="29" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="57" count="3" type="stmt"/>
+        <line num="59" count="3" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+      </file>
+      <file name="status.routes.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/status/status.routes.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="44" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api.controllers.sync">
+      <metrics statements="106" coveredstatements="105" conditionals="44" coveredconditionals="41" methods="10" coveredmethods="10"/>
+      <file name="sync.controller.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/sync/sync.controller.ts">
+        <metrics statements="84" coveredstatements="83" conditionals="40" coveredconditionals="37" methods="8" coveredmethods="8"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="37" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="52" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="53" count="3" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="68" count="5" type="stmt"/>
+        <line num="75" count="13" type="stmt"/>
+        <line num="76" count="13" type="cond" truecount="3" falsecount="0"/>
+        <line num="78" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="3" type="stmt"/>
+        <line num="80" count="3" type="stmt"/>
+        <line num="81" count="3" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
+        <line num="85" count="3" type="cond" truecount="7" falsecount="0"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="3" type="stmt"/>
+        <line num="90" count="10" type="stmt"/>
+        <line num="91" count="8" type="cond" truecount="5" falsecount="0"/>
+        <line num="92" count="3" type="stmt"/>
+        <line num="94" count="8" type="stmt"/>
+        <line num="105" count="5" type="stmt"/>
+        <line num="106" count="11" type="stmt"/>
+        <line num="108" count="11" type="stmt"/>
+        <line num="114" count="11" type="cond" truecount="4" falsecount="1"/>
+        <line num="116" count="3" type="stmt"/>
+        <line num="117" count="3" type="stmt"/>
+        <line num="119" count="3" type="stmt"/>
+        <line num="120" count="3" type="stmt"/>
+        <line num="122" count="4" type="stmt"/>
+        <line num="123" count="4" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="132" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="134" count="4" type="stmt"/>
+        <line num="135" count="4" type="stmt"/>
+        <line num="137" count="7" type="stmt"/>
+        <line num="140" count="11" type="stmt"/>
+        <line num="142" count="11" type="stmt"/>
+        <line num="144" count="11" type="stmt"/>
+        <line num="145" count="13" type="stmt"/>
+        <line num="146" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="148" count="11" type="stmt"/>
+        <line num="149" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="150" count="11" type="stmt"/>
+        <line num="155" count="11" type="stmt"/>
+        <line num="159" count="11" type="stmt"/>
+        <line num="160" count="11" type="stmt"/>
+        <line num="161" count="13" type="stmt"/>
+        <line num="162" count="11" type="stmt"/>
+        <line num="166" count="9" type="stmt"/>
+        <line num="167" count="9" type="stmt"/>
+        <line num="169" count="9" type="stmt"/>
+        <line num="176" count="2" type="stmt"/>
+        <line num="177" count="2" type="stmt"/>
+        <line num="179" count="2" type="stmt"/>
+        <line num="184" count="2" type="stmt"/>
+        <line num="191" count="5" type="stmt"/>
+        <line num="192" count="1" type="stmt"/>
+        <line num="198" count="1" type="stmt"/>
+        <line num="206" count="1" type="stmt"/>
+        <line num="207" count="1" type="stmt"/>
+        <line num="208" count="4" type="stmt"/>
+        <line num="209" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="211" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="213" count="1" type="stmt"/>
+        <line num="214" count="1" type="stmt"/>
+        <line num="216" count="1" type="stmt"/>
+        <line num="217" count="1" type="stmt"/>
+        <line num="219" count="1" type="stmt"/>
+        <line num="220" count="1" type="stmt"/>
+        <line num="222" count="1" type="stmt"/>
+        <line num="223" count="1" type="stmt"/>
+        <line num="225" count="4" type="stmt"/>
+        <line num="227" count="1" type="stmt"/>
+        <line num="229" count="1" type="stmt"/>
+      </file>
+      <file name="sync.routes.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/sync/sync.routes.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="69" count="5" type="stmt"/>
+      </file>
+      <file name="sync.validation.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/sync/sync.validation.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="39" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="47" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="83" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api.controllers.sync-history">
+      <metrics statements="44" coveredstatements="44" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
+      <file name="syncHistory.controller.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/sync-history/syncHistory.controller.ts">
+        <metrics statements="36" coveredstatements="36" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="41" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="52" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="56" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="66" count="5" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="70" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+      </file>
+      <file name="syncHistory.routes.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/api/controllers/sync-history/syncHistory.routes.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="62" count="5" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
+        <line num="114" count="5" type="stmt"/>
+        <line num="116" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.constants">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="httpCodes.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/constants/httpCodes.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.databases">
+      <metrics statements="31" coveredstatements="31" conditionals="17" coveredconditionals="16" methods="2" coveredmethods="2"/>
+      <file name="sequelize.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/sequelize.ts">
+        <metrics statements="31" coveredstatements="31" conditionals="17" coveredconditionals="16" methods="2" coveredmethods="2"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="29" count="12" type="cond" truecount="5" falsecount="0"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="35" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="9" type="stmt"/>
+        <line num="37" count="9" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="54" count="12" type="stmt"/>
+        <line num="57" count="7" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+        <line num="60" count="7" type="stmt"/>
+        <line num="61" count="7" type="stmt"/>
+        <line num="62" count="7" type="stmt"/>
+        <line num="63" count="7" type="stmt"/>
+        <line num="64" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.databases.models">
+      <metrics statements="97" coveredstatements="96" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="10"/>
+      <file name="customers.model.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/models/customers.model.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
+        <line num="37" count="7" type="stmt"/>
+        <line num="41" count="7" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="54" count="7" type="stmt"/>
+        <line num="57" count="7" type="stmt"/>
+        <line num="60" count="7" type="stmt"/>
+      </file>
+      <file name="employee.model.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/models/employee.model.ts">
+        <metrics statements="27" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
+        <line num="37" count="7" type="stmt"/>
+        <line num="41" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="49" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="57" count="7" type="stmt"/>
+        <line num="61" count="7" type="stmt"/>
+        <line num="65" count="7" type="stmt"/>
+        <line num="69" count="7" type="stmt"/>
+        <line num="73" count="7" type="stmt"/>
+        <line num="77" count="7" type="stmt"/>
+        <line num="81" count="7" type="stmt"/>
+        <line num="85" count="7" type="stmt"/>
+        <line num="89" count="7" type="stmt"/>
+        <line num="93" count="7" type="stmt"/>
+        <line num="97" count="7" type="stmt"/>
+        <line num="100" count="7" type="stmt"/>
+      </file>
+      <file name="orderItems.model.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/models/orderItems.model.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="25" count="30" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="43" count="7" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="55" count="7" type="stmt"/>
+      </file>
+      <file name="orders.model.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/models/orders.model.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="41" count="7" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="46" count="12" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="60" count="7" type="stmt"/>
+        <line num="63" count="7" type="stmt"/>
+        <line num="66" count="7" type="stmt"/>
+      </file>
+      <file name="products.model.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/models/products.model.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="40" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="54" count="7" type="stmt"/>
+      </file>
+      <file name="syncHistory.model.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/databases/models/syncHistory.model.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="40" count="7" type="stmt"/>
+        <line num="43" count="7" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="54" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.helpers">
+      <metrics statements="29" coveredstatements="29" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
+      <file name="customEnv.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/helpers/customEnv.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="16" count="11" type="stmt"/>
+        <line num="18" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+      </file>
+      <file name="getPagination.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/helpers/getPagination.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="5" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+      </file>
+      <file name="logger.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/helpers/logger.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="17" count="43" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="41" type="stmt"/>
+        <line num="19" count="41" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="41" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="41" type="stmt"/>
+      </file>
+      <file name="metrics.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/helpers/metrics.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="responseWrapper.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/helpers/responseWrapper.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="37" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middlewares">
+      <metrics statements="63" coveredstatements="63" conditionals="122" coveredconditionals="100" methods="9" coveredmethods="9"/>
+      <file name="auth.middleware.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/middlewares/auth.middleware.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="8" count="25" type="stmt"/>
+        <line num="9" count="25" type="stmt"/>
+        <line num="10" count="25" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="24" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="28" type="stmt"/>
+        <line num="20" count="28" type="stmt"/>
+        <line num="21" count="27" type="stmt"/>
+        <line num="23" count="27" type="cond" truecount="5" falsecount="0"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="30" count="24" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+      </file>
+      <file name="errors.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/middlewares/errors.ts">
+        <metrics statements="36" coveredstatements="36" conditionals="116" coveredconditionals="94" methods="5" coveredmethods="5"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="8" type="cond" truecount="0" falsecount="1"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="25" type="cond" truecount="0" falsecount="1"/>
+        <line num="22" count="25" type="cond" truecount="0" falsecount="1"/>
+        <line num="23" count="25" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="26" count="17" type="stmt"/>
+        <line num="27" count="17" type="stmt"/>
+        <line num="28" count="17" type="stmt"/>
+        <line num="29" count="40" type="cond" truecount="4" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="217" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="34" count="33" type="cond" truecount="3" falsecount="0"/>
+        <line num="35" count="9" type="stmt"/>
+        <line num="38" count="17" type="stmt"/>
+        <line num="41" count="6" type="stmt"/>
+        <line num="48" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="50" count="8" type="stmt"/>
+        <line num="53" count="8" type="stmt"/>
+        <line num="54" count="8" type="stmt"/>
+        <line num="56" count="8" type="stmt"/>
+        <line num="72" count="8" type="cond" truecount="9" falsecount="1"/>
+        <line num="73" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="103" count="8" type="stmt"/>
+      </file>
+      <file name="requestId.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/middlewares/requestId.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="31" type="stmt"/>
+        <line num="15" count="31" type="stmt"/>
+        <line num="16" count="31" type="stmt"/>
+        <line num="17" count="31" type="stmt"/>
+      </file>
+      <file name="validate.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/middlewares/validate.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="main.routes.ts" path="/Users/gedeon/Projects/Sync bridge/sync-bridge-express/src/routes/main.routes.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

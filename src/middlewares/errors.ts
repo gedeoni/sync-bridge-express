@@ -9,14 +9,6 @@ interface ErrorT extends Error {
   status?: number;
 }
 
-const sanitizeHeaders = (headers: any) => {
-  if (!headers) return headers;
-  const sanitized = { ...headers };
-  if (sanitized['x-auth-token']) sanitized['x-auth-token'] = '[REDACTED]';
-  if (sanitized['authorization']) sanitized['authorization'] = '[REDACTED]';
-  return sanitized;
-};
-
 const sanitizeBody = (body: any): any => {
   if (!body) return body;
   if (typeof body !== 'object') return body;
@@ -50,17 +42,11 @@ export const errorHandler = (
     console.log(error);
   }
 
-  const sanitizedHeaders = sanitizeHeaders(req.headers);
   const sanitizedBody = sanitizeBody(req.body);
 
   logger.error(
     {
-      req: {
-        id: req.id,
-        method: req.method,
-        url: req.url,
-        headers: sanitizedHeaders,
-      },
+      req,
       error: {
         name: error?.name,
         message: error?.message,
