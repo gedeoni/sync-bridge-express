@@ -104,7 +104,7 @@ graph TD
     R --> S[Return HTTP 500 Server Error]
 ```
 
-This decoupled architecture strictly satisfies the **Open-Closed Principle (OCP)**. If a new model requires complex custom relationship syncing (such as child elements, history logs, or custom side-effects), developers can simply register a new `SyncProcessor` in the registry. The core transaction and synchronization engine remains entirely untouched.
+This decoupled architecture strictly satisfies the **Open-Closed Principle (OCP)**. This means that if a new model requires complex custom relationship syncing (such as child elements, history logs, or custom side-effects), developers can simply register a new `SyncProcessor` in the registry. The core transaction and synchronization engine remains entirely untouched.
 
 ---
 
