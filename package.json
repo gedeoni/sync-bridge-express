@@ -15,10 +15,10 @@
     "format": "prettier --write .",
     "db:sync": "ts-node src/databases/sync",
     "db:drop": "ts-node src/databases/drop",
-    "db:migrate": "sequelize-cli db:migrate --config src/databases/config/config.json --migrations-path migrations",
-    "db:migrate:undo": "sequelize-cli db:migrate:undo --config src/databases/config/config.json --migrations-path migrations",
-    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all --config src/databases/config/config.json --migrations-path migrations",
-    "db:migrate:status": "sequelize-cli db:migrate:status --config src/databases/config/config.json --migrations-path migrations"
+    "db:migrate": "sequelize-cli db:migrate --config src/databases/config/config.js --migrations-path migrations",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo --config src/databases/config/config.js --migrations-path migrations",
+    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all --config src/databases/config/config.js --migrations-path migrations",
+    "db:migrate:status": "sequelize-cli db:migrate:status --config src/databases/config/config.js --migrations-path migrations"
   },
   "keywords": [],
   "author": "",
