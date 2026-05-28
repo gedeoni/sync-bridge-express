@@ -1,24 +1,21 @@
-import { Sequelize } from 'sequelize-typescript';
+import { Sequelize, SequelizeOptions } from 'sequelize-typescript';
 import { customEnv } from '../helpers/customEnv';
 import { logger } from '../helpers/logger';
 import Customer from './models/customers.model';
 import Product from './models/products.model';
 import Order from './models/orders.model';
 import OrderItem from './models/orderItems.model';
-import  SyncHistory  from './models/syncHistory.model';
+import SyncHistory from './models/syncHistory.model';
 import Employee from './models/employee.model';
 
 const dbUri = customEnv.DATABASE_URI as string;
 
 export const connect = (url: string) => {
-  const sequelize = new Sequelize(url, {
+  const isSqlite = url.startsWith('sqlite');
+
+  const options: SequelizeOptions = {
     models: [Customer, Product, Order, OrderItem, SyncHistory, Employee],
-    schema: customEnv.DB_SCHEMA || 'public',
     repositoryMode: true,
-    replication: {
-      read: [{ host: customEnv.SLAVE_ONE }],
-      write: { host: customEnv.MAIN_HOST },
-    },
     logging:
       customEnv.NODE_ENV === 'development'
         ? (sql: string) => {
@@ -26,15 +23,28 @@ export const connect = (url: string) => {
             logger.debug(`[Sequelize] ${sql}`);
           }
         : false,
+    dialect: isSqlite ? 'sqlite' : 'postgres',
+  };
 
-    dialectOptions: {
+  if (isSqlite) {
+    // Keep the replication architecture active for SQLite by mapping connection storage paths
+    options.replication = {
+      read: [{ storage: customEnv.SLAVE_ONE || 'replica.sqlite' } as any],
+      write: { storage: customEnv.MAIN_HOST || 'main.sqlite' } as any,
+    };
+  } else {
+    options.schema = customEnv.DB_SCHEMA || 'public';
+    options.replication = {
+      read: [{ host: customEnv.SLAVE_ONE }],
+      write: { host: customEnv.MAIN_HOST },
+    };
+    options.dialectOptions = {
       useUTC: false,
-    },
-    ...(url.startsWith('sqlite') ? {} : { timezone: '+2:00' }), // Kigali timezone
-    dialect: url.startsWith('sqlite') ? 'sqlite' : 'postgres',
-  });
+    };
+    options.timezone = '+2:00'; // Kigali timezone
+  }
 
-  return sequelize;
+  return new Sequelize(url, options);
 };
 
 export const sequelize = connect(dbUri);

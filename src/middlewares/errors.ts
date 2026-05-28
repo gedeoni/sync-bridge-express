@@ -9,6 +9,35 @@ interface ErrorT extends Error {
   status?: number;
 }
 
+const sanitizeHeaders = (headers: any) => {
+  if (!headers) return headers;
+  const sanitized = { ...headers };
+  if (sanitized['x-auth-token']) sanitized['x-auth-token'] = '[REDACTED]';
+  if (sanitized['authorization']) sanitized['authorization'] = '[REDACTED]';
+  return sanitized;
+};
+
+const sanitizeBody = (body: any): any => {
+  if (!body) return body;
+  if (typeof body !== 'object') return body;
+  if (Array.isArray(body)) {
+    return body.map((item) => sanitizeBody(item));
+  }
+  const sanitized = { ...body };
+  const sensitiveKeys = ['password', 'token', 'secret', 'card', 'cvv', 'credit_card'];
+  for (const key of Object.keys(sanitized)) {
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+      continue;
+    }
+    if (sensitiveKeys.some((sk) => key.toLowerCase().includes(sk))) {
+      sanitized[key] = '[REDACTED]';
+    } else if (typeof sanitized[key] === 'object' && sanitized[key] !== null) {
+      sanitized[key] = sanitizeBody(sanitized[key]);
+    }
+  }
+  return sanitized;
+};
+
 export const errorHandler = (
   error: ErrorT | CelebrateError,
   req: Request,
@@ -21,11 +50,23 @@ export const errorHandler = (
     console.log(error);
   }
 
+  const sanitizedHeaders = sanitizeHeaders(req.headers);
+  const sanitizedBody = sanitizeBody(req.body);
+
   logger.error(
     {
-      req: req,
-      error: error,
-      body: req.body,
+      req: {
+        id: req.id,
+        method: req.method,
+        url: req.url,
+        headers: sanitizedHeaders,
+      },
+      error: {
+        name: error?.name,
+        message: error?.message,
+        stack: error?.stack,
+      },
+      body: sanitizedBody,
       method: req.method,
       url: req.url,
       message: isCelebrateError(error) ? error?.details?.get('body')?.message : error?.message,
@@ -34,6 +75,7 @@ export const errorHandler = (
   );
 
   const status = isCelebrateError(error) ? httpCodes.BAD_REQUEST : error?.status ?? httpCodes.INTERNAL_SERVER_ERROR;
+  const isClientError = status >= 400 && status < 500;
 
   const response = isCelebrateError(error)
     ? {
@@ -50,7 +92,7 @@ export const errorHandler = (
     : {
         res,
         data: {
-          message: error?.message,
+          message: isClientError ? error?.message : undefined,
           method: req.method,
           url: req.url,
         },
@@ -58,9 +100,9 @@ export const errorHandler = (
         message:
           error?.name === 'SequelizeUniqueConstraintError'
             ? 'Record already exists'
-            : error?.name !== 'SequelizeUniqueConstraintError' && status >= httpCodes.INTERNAL_SERVER_ERROR
-            ? 'Something Went Wrong'
-            : 'Internal Server Error',
+            : isClientError
+            ? error?.message || 'Bad Request'
+            : 'Something Went Wrong',
       };
 
   return responseWrapper(response);

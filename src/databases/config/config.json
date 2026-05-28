@@ -1,26 +1,14 @@
 {
   "development": {
     "use_env_variable": "DATABASE_URI",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false
-    },
-    "timezone": "+02:00"
+    "dialect": "sqlite"
   },
   "test": {
     "use_env_variable": "DATABASE_URI",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false
-    },
-    "timezone": "+02:00"
+    "dialect": "sqlite"
   },
   "production": {
     "use_env_variable": "DATABASE_URI",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false
-    },
-    "timezone": "+02:00"
+    "dialect": "sqlite"
   }
 }

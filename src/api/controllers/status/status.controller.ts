@@ -12,7 +12,7 @@ export class StatusController {
    * @return {object} 200 - Service is healthy
    * @return {object} 503 - Service is unhealthy
    */
-  public checkStatus = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  public checkStatus = async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
     try {
       await sequelize.authenticate();
       logger.info('Database connection has been established successfully.');

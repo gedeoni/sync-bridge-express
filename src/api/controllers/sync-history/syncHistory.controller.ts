@@ -6,22 +6,32 @@ import { responseWrapper } from '../../../helpers/responseWrapper';
 
 export const getAll = async (req: Request, res: Response) => {
   const { page, size, status } = req.query;
-  const { limit, offset, pages, total } = await getPagination({ page: Number(page), limit: Number(size) }, syncHistoryRepository);
-
+  const { limit, offset } = getPagination({ page: Number(page), limit: Number(size) });
 
   const where: any = {};
   if (status) {
     where.status = status;
   }
 
-  const syncHistories = await syncHistoryRepository.findAndCountAll({
+  const { rows, count } = await syncHistoryRepository.findAndCountAll({
     where,
     limit,
     offset,
     order: [['createdAt', 'DESC']],
   });
 
-  return responseWrapper({res, status: 200, message: 'Sync histories retrieved successfully', data: syncHistories});
+  const pages = Math.ceil(count / limit);
+
+  return responseWrapper({
+    res,
+    status: 200,
+    message: 'Sync histories retrieved successfully',
+    data: {
+      count,
+      pages,
+      rows,
+    },
+  });
 };
 
 export const getById = async (req: Request, res: Response) => {
@@ -29,10 +39,10 @@ export const getById = async (req: Request, res: Response) => {
   const syncHistory = await syncHistoryRepository.findByPk(id);
 
   if (!syncHistory) {
-    return responseWrapper({res, status: 404, message: 'Sync history not found'});
+    return responseWrapper({ res, status: 404, message: 'Sync history not found' });
   }
 
-  return responseWrapper({res, status: 200, message: 'Sync history retrieved successfully', data: syncHistory});
+  return responseWrapper({ res, status: 200, message: 'Sync history retrieved successfully', data: syncHistory });
 };
 
 export const retry = async (req: Request, res: Response) => {
@@ -40,17 +50,17 @@ export const retry = async (req: Request, res: Response) => {
   const syncHistory = await syncHistoryRepository.findByPk(id);
 
   if (!syncHistory) {
-    return responseWrapper({res, status: 404, message: 'Sync history not found'});
+    return responseWrapper({ res, status: 404, message: 'Sync history not found' });
   }
 
   if (syncHistory.get('status') !== SyncStatus.FAILED) {
-    return responseWrapper({res, status: 400, message: 'Only failed syncs can be retried'});
+    return responseWrapper({ res, status: 400, message: 'Only failed syncs can be retried' });
   }
 
   syncHistory.set('status', SyncStatus.PENDING_RETRY);
   await syncHistory.save();
 
-  return responseWrapper({res, status: 200, message: 'Sync history will be retried', data: syncHistory});
+  return responseWrapper({ res, status: 200, message: 'Sync history will be retried', data: syncHistory });
 };
 
 export const deleteById = async (req: Request, res: Response) => {
@@ -58,10 +68,10 @@ export const deleteById = async (req: Request, res: Response) => {
   const syncHistory = await syncHistoryRepository.findByPk(id);
 
   if (!syncHistory) {
-    return responseWrapper({res, status: 404, message: 'Sync history not found'});
+    return responseWrapper({ res, status: 404, message: 'Sync history not found' });
   }
 
   await syncHistory.destroy();
 
-  return responseWrapper({res, status: 204, message: 'Sync history deleted successfully'});
+  return responseWrapper({ res, status: 204, message: 'Sync history deleted successfully' });
 };

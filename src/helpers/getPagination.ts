@@ -1,25 +1,13 @@
 import { IPaginationArgs } from '../types/shared.types';
-import { Model } from 'sequelize';
-import { Repository } from 'sequelize-typescript';
 
-export const getPagination = async (paginationArgs: IPaginationArgs, repository?: Repository<Model>) => {
-  const limit = paginationArgs.limit ?? 15;
-  const page = paginationArgs.page && paginationArgs.page > 0 ? paginationArgs.page - 1 : 0;
-
-  const offset = page * limit;
-
-  let total, pages;
-
-  if (repository) {
-    total = await repository.count({});
-    pages = Math.ceil(total / limit);
-  }
+export const getPagination = (paginationArgs: IPaginationArgs) => {
+  const limit = paginationArgs.limit && paginationArgs.limit > 0 ? paginationArgs.limit : 15;
+  const page = paginationArgs.page && paginationArgs.page > 0 ? paginationArgs.page : 1;
+  const offset = (page - 1) * limit;
 
   return {
     limit,
     offset,
-    total,
-    pages,
-    page: paginationArgs.page,
+    page,
   };
 };

@@ -1,6 +1,6 @@
 import { Resolver, Query, Arg, Int, Mutation, InputType, Field, FieldResolver, Root, Subscription } from 'type-graphql';
 import { Employee } from '../../databases/models/employee.model';
-import { employeeRepository } from '../../databases/sequelize';
+import { employeeRepository, sequelize } from '../../databases/sequelize';
 import { Op } from 'sequelize';
 import { pubSub } from '../pubsubInstance';
 
@@ -75,12 +75,15 @@ export class EmployeeResolver {
   ): Promise<Employee[]> {
     const searchTerm = `%${search}%`;
 
+    const dialect = sequelize.getDialect();
+    const likeOp = dialect === 'sqlite' ? Op.like : Op.iLike;
+
     return employeeRepository.findAll({
       where: {
         [Op.or]: [
-          { firstName: { [Op.iLike]: searchTerm } },
-          { lastName: { [Op.iLike]: searchTerm } },
-          { email: { [Op.iLike]: searchTerm } },
+          { firstName: { [likeOp]: searchTerm } },
+          { lastName: { [likeOp]: searchTerm } },
+          { email: { [likeOp]: searchTerm } },
         ],
       },
       offset,

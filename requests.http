@@ -94,7 +94,7 @@ POST http://localhost:{{port}}/graphql
 Content-Type: application/json
 
 {
-  "query": "query { searchEmployees(search: \"Gedeon\", limit: 5) { id firstName lastName email jobTitle jobLevel } }"
+  "query": "query { searchEmployees(search: \"Ngunjiri\", limit: 5) { id firstName lastName email jobTitle jobLevel phoneNumber} }"
 }
 
 ###

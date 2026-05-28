@@ -17,8 +17,8 @@ export class MainRoutes {
   }
 
   private routes(): void {
-    this._router.use(`/sync`, isAuth, syncRoutes);
-    this._router.use(`/healthz`, statusRoutes);
-    this._router.use(`/sync-history`, isAuth, syncHistoryRoutes);
+    this._router.use('/sync', isAuth, syncRoutes);
+    this._router.use('/healthz', statusRoutes);
+    this._router.use('/sync-history', isAuth, syncHistoryRoutes);
   }
 }
